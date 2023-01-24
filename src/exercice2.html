@@ -1,0 +1,233 @@
+{% include '_partials/_header.html' with {'title': 'Exercice #2'} %}
+
+<section class="section">
+    <div class="wrapper">
+        <div class="section-info">
+            <h2>Création d'une animation sur un lien</h2>
+            <p>
+                Pour cet exercice, vous devez tentez de reproduire au moins les deux premières animations de survol. Suivez les indications suivantes :
+            </p>
+
+            <img src="assets/images/ex2.gif" alt="Démo des animations de survol" />
+        </div>
+        <div class="links">
+            <a href="#" class="link-item link-item--underline">En savoir plus</a>
+            <a href="#" class="link-item link-item--bg">Cliquez-ici</a>
+            <a href="#" class="link-item link-item--underline link-item--underline-side">Envoye par icitte</a>
+            <a href="#" class="link-item link-item--underline link-item--underline-side-2">Perdu?!?</a>
+        </div>
+
+        <div class="how-to">
+            <details>
+                <summary>Étape de reproduction du menu 1</summary>
+
+                <ol>
+                    <li>Ajouter une classe sur le premier link-item, link-item--underline</li>
+                    <li>
+                        Créer la version hover
+                        <ol>
+                            <li>
+                                Créer la ligne sous le menu .link-item
+                                <ul>
+                                    <li>
+                                        Faire en sorte d'ajouter un pseudo-élément after
+                                        <span class="highlight">::after</span>
+                                    </li>
+                                    <li>
+                                        Ajouter la
+                                        <span class="highlight">couleur primaire</span>
+                                        à la ligne
+                                    </li>
+                                    <li>
+                                        Ajouter la propriété
+                                        <span class="highlight">essentielle pour qu'un pseudo élément fonctionne</span>
+                                    </li>
+                                    <li>
+                                        Ajouter une hauteur de
+                                        <span class="highlight">4px</span>
+                                    </li>
+                                    <li>
+                                        Ajouter une largeur de
+                                        <span class="highlight">100%</span>
+                                        <br />
+                                        La ligne ne devrait toujours pas apparaître. La mettre en display `block`
+                                        devrait régler le problème
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                La ligne prend maintenant toutes l'espace de la section. C'est normal, il faut
+                                maintenant faire en sorte de la positionner sous le texte.
+                                <ul>
+                                    <li>
+                                        Ajouter le bon position à votre after pour qu'il se place dans le bas à 0 et à
+                                        gauche 0px
+                                    </li>
+                                    <li>
+                                        Faire en sorte que le point de référence de votre positionnement absolu soit
+                                        .link-item
+                                    </li>
+                                    <li>
+                                        Ajouter sur .link-item du padding dans le bas de 4px pour distancer la ligne du
+                                        texte
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        La version hover est maintenant créer, nous allons maintenant cacher la ligne vers le bas par
+                        défaut
+                        <ul>
+                            <li>
+                                Ajouter une transformation qui permet de déplacer sur l'axe des Y de 100%. La ligne
+                                devrait descendre mais rester visible
+                            </li>
+                            <li>
+                                Il faut cacher la ligne. Vous pouvez utiliser la boite de votre .link-item comme masque.
+                                Vous pouvez mettre un overflow: hidden; qui chachera tout ce qui est a l'extérieur de la
+                                boite.
+                            </li>
+                            <li>
+                                Ajouter aussi le bon display pour pouvoir profiter du modèle de boite qu'un élément
+                                inline ne permet pas.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Ajouter sur le "hover" la transformation inverse pour faire apparaitre la ligne</li>
+                    <li>Ajouter une animation de .3s avec un ease-out seulement sur le transform</li>
+                </ol>
+
+                <br />
+            </details>
+            <details>
+                <summary>Étape de reproduction du menu 2</summary>
+                <ol>
+                    <li>Ajouter une classe sur le premier link-item, link-item--bg</li>
+                    <li>
+                        Créer la version hover
+                        <ol>
+                            <li>
+                                Créer le background de fond du menu
+                                <ul>
+                                    <li>
+                                        Faire en sorte d'ajouter un pseudo-élément
+                                        <span class="highlight">::before</span>
+                                    </li>
+                                    <li>
+                                        Ajouter la
+                                        <span class="highlight">couleur primaire</span>
+                                        au fond
+                                    </li>
+                                    <li>
+                                        Ajouter la propriété
+                                        <span class="highlight">essentielle pour qu'un pseudo élément fonctionne</span>
+                                    </li>
+                                    <li>
+                                        Ajouter une hauteur de
+                                        <span class="highlight">100%</span>
+                                    </li>
+                                    <li>
+                                        Ajouter une largeur de
+                                        <span class="highlight">100%</span>
+                                    </li>
+                                    <li>
+                                        Le background ne devrait pas apparaître. Mettre le before en display block pour
+                                        qu'il apparaisse.
+                                    </li>
+                                    <li>
+                                        Il est maintenant par dessus votre texte. Changer l'ordre des couches de
+                                        l'élément pour qu'il soit derrière le texte (-1)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Le bg prend maintenant toutes l'espace de la section. C'est normal, il faut maintenant
+                                faire en sorte de la positionner sous le texte.
+                                <ul>
+                                    <li>
+                                        Ajouter le bon position à votre before pour qu'il se place dans le haut à 0 et à
+                                        gauche 0
+                                    </li>
+                                    <li>
+                                        Faire en sorte que le point de référence de votre positionnement absolu soit
+                                        .link-item
+                                    </li>
+                                    <li>Ajouter sur .link-item du padding sur tous les côtés de 4px</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        La version hover est maintenant créer, nous allons maintenant cacher le background
+                        <ul>
+                            <li>
+                                Ajouter une transformation qui permet de étiré sur l'axe des Y à 0 . Le bg ne devrait
+                                plus être visible
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Ajouter sur le "hover" la transformation inverse pour faire apparaitre la ligne</li>
+                    <li>Ajouter une animation de .3s avec un ease-out seulement sur le transform</li>
+                </ol>
+            </details>
+            <details>
+                <summary>Étape de reproduction du menu 3</summary>
+                <ol>
+                    <li>Ajouter deux classe à votre link-item : link-item--underline et link-item--underline-side</li>
+                    <li>
+                        La classe link-item--underline va recréer l'animation de haut en bas et
+                        link-item--underline--side
+                    </li>
+                    <li>
+                        Modifier la transformation du after de la classe .link-item--underline-side pour une
+                        transformation qui permet de étiré sur l'axe des X à 0 .
+                    </li>
+                    <li>Ajouter sur le "hover" la transformation inverse pour faire apparaitre la ligne</li>
+                </ol>
+            </details>
+            <details>
+                <summary>Étape de reproduction du menu 4</summary>
+                <ol>
+                    <li>Ajouter deux classe à votre link-item : link-item--underline et link-item--underline-side-2</li>
+                    <li>
+                        La classe link-item--underline va recréer l'animation de haut en bas et
+                        link-item--underline--side
+                    </li>
+                    <li>
+                        Sur l'état normal:
+                        <ul>
+                            <li>
+                                Modifier la transformation du after de la classe .link-item--underline-side pour une
+                                transformation qui permet de étiré sur l'axe des X à 0 .
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Sur l'état de survol
+                        <ul>
+                            <li>Faire la transformation inverse</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Sur l'état normal:
+                        <ul>
+                            <li>Le transform-origine permet de changer le point d'ancrage pendant la transition.</li>
+                            <li>Ajuster le transform origin pour left</li>
+                            <li>
+                                l'animation devrait maintenant commencer de la gauche vers la droite et revenir vers la
+                                gauche
+                            </li>
+                            <li>
+                                Vous pouvez changer le transform-orgine sur le hover pour que sa commence de la gauche
+                                et finisse vers la droite. Faite des essais pour y arriver.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </details>
+        </div>
+    </div>
+</section>
+
+{% include '_partials/_footer.html' %}

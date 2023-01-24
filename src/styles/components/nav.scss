@@ -1,0 +1,96 @@
+/* ==========================================================================
+   nav / component
+   ========================================================================== */
+
+.nav__main {
+    background: white;
+    border-radius: 0 0.3em 0.3em 0;
+    padding: var(--spacing-sm);
+    position: absolute;
+    top: var(--spacing-md);
+    left: 0;
+    width: 300px;
+    z-index: 100;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+    ul {
+        color: var(--color-primary);
+        list-style: none;
+        padding-left: 0;
+    }
+
+    li {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc(50% - 1px);
+            height: 2px;
+            right: calc(100% + 10px);
+            width: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateX(0);
+            transition: 0.4s transform;
+        }
+
+        &:hover {
+            a {
+                text-decoration: none;
+                color: var(--color-black);
+            }
+            &:before {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    .back {
+        display: block;
+        position: relative;
+
+        &::before {
+            display: none;
+        }
+        .icon {
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .brand {
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: var(--font-primary);
+        letter-spacing: 0.1em;
+        text-align: center;
+        display: block;
+
+        &:hover {
+            text-decoration: none;
+            color: var(--color-black);
+        }
+    }
+    @media screen and (max-width: 1700px) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-xs);
+
+        ul {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            li::before,
+            span {
+                display: none;
+            }
+        }
+    }
+}

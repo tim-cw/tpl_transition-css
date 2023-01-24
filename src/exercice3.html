@@ -1,0 +1,69 @@
+{% include '_partials/_header.html' with {'title': 'Exercice #3'} %}
+
+<section class="section">
+    <div class="wrapper">
+        <div class="section-info">
+            <h2>Création d'une animation sur un bouton</h2>
+            <p>
+                Pour cet exercice, suivez les étapes afin de reproduire l'animation de survol.
+            </p>
+
+            <img src="assets/images/ex3.gif" alt="Démo des animations de survol" />
+        </div>
+        <div class="links">
+            <a href="#" class="button">Où est allé tout ce monde?</a>
+        </div>
+
+        <div class="how-to">
+            <details>
+                <summary>Étape de reproduction du menu 1</summary>
+                <ol>
+                    <li>
+                        Configuration de base
+                        <ul>
+                            <li>Ajouter une bordure verte de 2px</li>
+                            <li>Ajuster le padding pour 20px à gauche et à droite et 5px en haut et en bas</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Créer la version hover
+                        <ol>
+                            <li>
+                                Répéter les étapes du link-item-bg de l'exercice 1 pour ajouter une masse blanche
+                                derrière votre texte
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        La version hover est maintenant créer, nous allons maintenant cacher la ligne vers le masse
+                        blanche par défaut
+                        <ul>
+                            <li>
+                                Faire une transformation pour déplacer sur l'axes des X de toute la longueur et un skew
+                                de 45deg
+                            </li>
+                            <li>
+                                Si vous avez faite une translation de -100%, vous verrez qu'on voit encore une coin de
+                                la masse blanche. Vous pouvez augmenter le pourcentage pour la faire disparaitre
+                                complètement
+                            </li>
+                            <li>
+                                Il faut cacher la masse blanche. Vous pouvez utiliser la boite de votre .buttonm comme
+                                masque. Vous pouvez mettre un overflow: hidden; qui chachera tout ce qui est a
+                                l'extérieur de la boite.
+                            </li>
+                            <li>
+                                Ajouter aussi le bon display pour pouvoir profiter du modèle de boite qu'un élément
+                                inline ne permet pas.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Ajouter sur le "hover" la transformation inverse pour faire apparaitre la masse</li>
+                    <li>Ajouter une animation de .3s avec un ease-out seulement sur le transform</li>
+                </ol>
+            </details>
+        </div>
+    </div>
+</section>
+
+{% include '_partials/_footer.html' %}
